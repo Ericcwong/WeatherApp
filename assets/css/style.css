@@ -1,0 +1,18 @@
+.header{
+    text-align: center;
+    background-color: dodgerblue ;
+}
+
+/*Searching Cities container*/
+.searchCities{
+    margin-left: 5%;
+    /* background-color: aqua; */
+}
+
+/*Containers*/
+.col-sm-3{
+    background-color: coral;
+}
+.col-sm-8{
+    background-color: cornflowerblue;
+}
