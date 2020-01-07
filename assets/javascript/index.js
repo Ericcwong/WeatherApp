@@ -18,7 +18,7 @@ $("#getWeather").on("click",function(event){
         $(".currentDay").html("");
         $(".currentDay").append(`
         <h3 id="cityName">${response.name}</h3>
-        <p id="temperature">Temperature: ${newFahrenheit}</p>
+        <p id="temperature">Temperature: ${newFahrenheit} F</p>
         <p id="humidity">Humidity: ${response.main.humidity}</p>
         <p id="windSpeed">Wind Speed: ${response.wind.speed}</p>
         <p id="uVIndex"></p>
