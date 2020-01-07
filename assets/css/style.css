@@ -10,10 +10,21 @@
 }
 
 /*Containers*/
+.container-fluid{
+    width: 85%;
+}
 .col-sm-3{
     background-color: lightgray;
 }
 .col-sm-8{
     margin-left: 2%;
     background-color: whitesmoke;
+}
+
+/*This is 5 day weather section*/
+.dayOne, .dayTwo, .dayThree, .dayFour, .dayFive{
+    float:left;
+    background-color: cornflowerblue;
+    /* /* margin-left: 10%; */
+    margin-right: 2%; 
 }
