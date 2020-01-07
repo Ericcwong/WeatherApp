@@ -3,7 +3,7 @@ $("#getWeather").on("click",function(event){
     event.preventDefault();
     var city = $("#cityInput").val();
     var currentDayURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=af5ff51d8478a9ce01438eae6ef98a99";
-    var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=af5ff51d8478a9ce01438eae6ef98a99";
+    var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=af5ff51d8478a9ce01438eae6ef98a99";
 
     /*Current day weather*/
     $.ajax({
@@ -29,9 +29,23 @@ $("#getWeather").on("click",function(event){
     $.ajax({
         url: fiveDayURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function(week){
         console.log(fiveDayURL);
-        console.log(response);
+        console.log(week);
+        var k = response.main.temp
+        var fahrenheit = (k -273.15) * 1.80 + 32;
+        var newFahrenheit = fahrenheit.toFixed(1);
+        $("#fiveDay").html("");
+        $("#fiveDay").append(`
+            <h3> 5-Day Forecast: </h3>
+                <div class ="weatherCard">
+                    <h4>${week.list[4].dt_txt}<h4>
+                    <h4>${week.city.name}<h4>
+                    <p></p>
+                    <p></p>
+
+
+        `);
     });
 
 });
