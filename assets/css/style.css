@@ -11,8 +11,9 @@
 
 /*Containers*/
 .col-sm-3{
-    background-color: coral;
+    background-color: lightgray;
 }
 .col-sm-8{
-    background-color: cornflowerblue;
+    margin-left: 2%;
+    background-color: whitesmoke;
 }
