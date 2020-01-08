@@ -1,5 +1,5 @@
 
-$("#getWeather").on("click",function(event){
+$("#getWeather").on("click",function loadWeather(event){
     event.preventDefault();
     var city = $("#cityInput").val();
     var currentDayURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=af5ff51d8478a9ce01438eae6ef98a99";
@@ -23,8 +23,8 @@ $("#getWeather").on("click",function(event){
             <h3 id="cityName">${response.name}<img src="${currentDayIcon}"/></h3>
             
             <p id="temperature">Temperature: ${newFahrenheit} &#8457; </p>
-            <p id="humidity">Humidity: ${response.main.humidity}</p>
-            <p id="windSpeed">Wind Speed: ${response.wind.speed}</p>
+            <p id="humidity">Humidity: ${response.main.humidity}%</p>
+            <p id="windSpeed">Wind Speed: ${response.wind.speed}MPH</p>
             <p id="uVIndex"></p>
         </div>
         `);
@@ -77,35 +77,35 @@ $("#getWeather").on("click",function(event){
                     <p>${week.list[4].dt_txt}</p>
                     <img src="${dayOneIcon}">
                     <p>Temp: ${dayOneTemp} 	&#8457; </p>
-                    <p></p>
+                    <p>Humidity: ${week.list[4].main.humidity}%</p>
                 </div>
 
                 <div class ="dayTwo">
                     <p>${week.list[12].dt_txt}</p>
                     <img src="${dayTwoIcon}">
                     <p>Temp: ${dayTwoTemp} 	&#8457; </p>
-                    <p></p>
+                    <p>Humidity: ${week.list[12].main.humidity}%</p>
                 </div>
 
                 <div class ="dayThree">
                     <p>${week.list[20].dt_txt}</p>
                     <img src="${dayThreeIcon}">
                     <p>Temp: ${dayThreeTemp} 	&#8457; </p>
-                    <p></p>
+                    <p>Humidity: ${week.list[20].main.humidity}%</p>
                 </div>
 
                 <div class ="dayFour">
                     <p>${week.list[28].dt_txt}</p>
                     <img src="${dayFourIcon}">
                     <p>Temp: ${dayFourTemp} 	&#8457; </p>
-                    <p></p>
+                    <p>Humidity: ${week.list[28].main.humidity}%</p>
                 </div>
 
                 <div class ="dayFive">
                     <p>${week.list[36].dt_txt}</p>
                     <img src="${dayFiveIcon}">
                     <p>Temp: ${dayFiveTemp} 	&#8457; </p>
-                    <p></p>
+                    <p>Humidity: ${week.list[36].main.humidity}%</p>
                 </div>
 
         `);
@@ -113,18 +113,11 @@ $("#getWeather").on("click",function(event){
 
 });
 
-$("#getWeather").on("click",function(){
+$("#getWeather").on("click",function saveCity(){
     var userInputsValue = $(this).siblings("#cityInput").val();
+    $(".citySave").append(`<button class="reloadCity" value="${localStorage.getItem(userInputsValue)}">${userInputsValue}</button>`)
     localStorage.setItem(userInputsValue,userInputsValue);
-    
-    $(".citySave").append(`<button class="reloadCity" value="${localStorage.getItem(userInputsValue)}">${localStorage.getItem(userInputsValue)}`)
+    localStorage.setItem()
+   localStorage.getItem(userInputsValue)
 
 });
-
-// $(".saveBtn").on("click", function(event){
-//     var userInputsValue = $(this).siblings("textarea").val();
-//     var dataHour = $(this).siblings("textarea").attr("data-hour");
-//     localStorage.setItem(dataHour, userInputsValue);
-function saveCity(){
-    
-}
