@@ -6,7 +6,20 @@
 /*Searching Cities container*/
 .searchCities{
     margin-left: 5%;
+
     /* background-color: aqua; */
+}
+.historyButton{
+    margin-top: 4%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: lightskyblue;
+    border: 1px solid black;
+    border-radius: 8px; 
+}
+.reloadCity:hover{
+    background-color: lightgray;
+    color: white;
 }
 
 /*Containers*/
