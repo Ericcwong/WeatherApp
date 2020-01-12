@@ -121,7 +121,7 @@ $("#getWeather").on("click",function saveCity(){
     cityArray.push(cityInput);
     console.log("cityArray:",cityArray);
     localStorage.setItem("City",JSON.stringify(cityArray));
-    $(".citySave").append(`<button class="historyButton" data-cityName="${cityInput}">${cityInput}</button>`);
+    $(".citySave").append(`<button class="historyButton" data-cityName="${cityInput}" value="${cityInput}">${cityInput}</button>`);
     
 
 });
